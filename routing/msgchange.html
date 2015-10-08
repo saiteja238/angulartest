@@ -1,0 +1,31 @@
+<html ng-app="msgchange">
+
+<head>
+    <title>Msg CHANGE</title>
+    <script src="angular.min.js"></script>
+</head>
+
+<body ng-controller="maincontrol">
+    <p>{{msgbody}}--{{msgname}}</p>
+    <button ng-click="change()">CHANGE</button>
+</body>
+<script>
+var a = angular.module("msgchange", []);
+a.controller("maincontrol", ['$scope', function($scope) {
+        $scope.msgbody = "11111";
+        $scope.msgname="2222222";
+
+        $scope.change = function() {
+
+            $scope.msgname = "33333";
+
+
+
+        };
+
+    }]
+
+)
+</script>
+
+</html>

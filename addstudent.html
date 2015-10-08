@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="data.js"></script>
+        
+   
+    <title>STUDENT DATA</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <link href="css/signin.css" rel="stylesheet">
+
+<style>
+
+table{counter-reset:section;}
+.count:before
+{
+counter-increment:section;
+content:counter(section);
+}
+</style>
+</head>
+
+<body>
+    <div ng-controller="studentmain">
+     <form class="form-signintable">
+        <div>
+            <table class="table" ng-model="cb">
+
+                <th>#</th>
+                <th>NAME</th>
+                <th>ROLL</th>
+                <tr ng-repeat="st in studenttable" >
+                   
+                    <td class="count" ng-model="index"></td>
+                    <td >{{st.name | uppercase }}</td>
+                    <td>{{ st.roll | uppercase}}</td>
+                    <td>
+                    <input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(st.name)"/></td>
+                </tr>
+            </table>
+        </div>
+
+     </form>   
+        <br>
+        <br>
+        <form class="form-signin">
+            <div>
+                NAME:
+                <input type="text" class="form-control" ng-model="stname" /> ROLL:
+                <input type="text" class="form-control" ng-model="stroll" />
+                <button type="button" class="btn  btn-danger btn-block" ng-click="addstudent()">ADD</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

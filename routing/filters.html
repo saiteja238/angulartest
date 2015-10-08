@@ -1,0 +1,27 @@
+<! GET MORE ON FILTERS FROM : "https://docs.angularjs.org/api/ng/filter">
+
+
+<!DOCTYPE html>
+<html ng-app>
+
+
+<head>
+    <script src="angular.min.js"></script>
+   
+</head>
+
+<body>
+
+	<a href="https://docs.angularjs.org/api/ng/filter">FILTERS IN ANGULAR</a>
+    <div class="container" ng-init="register=[{name:'ravi',coll:'IARE'},{name:'sai',coll:'CVSR'},{name:'ssssss',coll:'zzzzz'},{name:'qqqq',coll:'CssdR'}]">
+      <br>
+        text:
+              <input type="text" ng-model="tt"/> 
+              							<!  FILTER tags filters the content>
+
+        <li ng-repeat="PN in register | filter:tt | orderBy:'coll' "> {{PN.name  }}: {{PN.coll }}</li>
+       
+    </div>
+</body>
+
+</html>
